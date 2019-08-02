@@ -21,6 +21,15 @@ class PostsController extends Controller
 
        return view('posts.index', ['posts' => $posts]);
    }
+
+   public function index2($users)
+   {
+
+   }
+
+
+
+
    public function create()
    {
        return view('posts.create');
@@ -96,10 +105,9 @@ class PostsController extends Controller
       $this->middleware('auth', array('except' => 'index'));
     }
 
-
-
-    public function getusere(){
-      return view('usere');
+    public function getusers()
+    {
+      return view('users');
     }
 
 }

@@ -13,12 +13,13 @@
 Route::get('/', function () {
    return view('home');
 });
+Route::get('/board','BoardController@index');
 
-Route::get('/usere', 'usereController@index');
+Route::get('users', 'UsersController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('top');
-Route::resource('posts', 'PostsController', ['only' => ['create', 'store']]);
+
 
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
 

@@ -16,10 +16,12 @@ Route::get('/', function () {
 Route::get('/board','BoardController@index');
 
 Route::get('users', 'UsersController@index');
+Route::post('users', 'UsersController@store');
+Route::put('/follow/{id}','UsersController@follow');
+ Route::put('/unfollow/{id}','UsersController@unfollow');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'PostsController@index')->name('top');
-
 
 Route::resource('comments', 'CommentsController', ['only' => ['store']]);
 

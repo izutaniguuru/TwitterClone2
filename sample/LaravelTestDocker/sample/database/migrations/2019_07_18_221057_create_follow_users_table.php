@@ -13,7 +13,7 @@ class CreateFollowsUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('follows', function (Blueprint $table) {
+        Schema::create('follow_users', function (Blueprint $table) {
             // id
             $table->increments('id');
 
@@ -28,7 +28,7 @@ class CreateFollowsUsersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('follows', function($table) {
+        Schema::table('follow_users', function($table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('follow_id')->references('id')->on('users')->onDelete('cascade');
         });
@@ -43,6 +43,6 @@ class CreateFollowsUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('follows');
+        Schema::dropIfExists('follow_users');
     }
 }

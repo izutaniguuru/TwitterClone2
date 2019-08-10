@@ -23,9 +23,3 @@ class FollowUser extends Model
 
     $users = App\users::where('')
 }
-
-class Follow extends Model
-{
-    protected $table = 'follows';
-
-}

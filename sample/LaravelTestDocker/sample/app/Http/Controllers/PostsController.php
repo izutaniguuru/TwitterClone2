@@ -22,10 +22,7 @@ class PostsController extends Controller
        return view('posts.index', ['posts' => $posts]);
    }
 
-   public function index2($users)
-   {
-
-   }
+   
 
 
 
